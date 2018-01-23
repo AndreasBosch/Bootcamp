@@ -22,7 +22,7 @@ er en logisk operator som kigger på om de to variabler IKKE har samme værdi.
 
 # !== 
 >!==  
-er en logisk operator som kigger på om de to variabler IKKE har samme værdi OG datatyper.
+er en logisk operator som kigger på om de to variabler IKKE har samme værdi men SAMME Datatype.
 
 # <
 ><  (less than)  

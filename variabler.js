@@ -1,7 +1,7 @@
 let mitFornavn = "Andreas"
 console.log(mitFornavn)
 
-let minAlder ="19"
+let minAlder =19
 console.log(minAlder)
 
 let mitEfternavn = "Bosch"
