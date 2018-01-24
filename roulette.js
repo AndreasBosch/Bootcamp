@@ -2,11 +2,10 @@
 
 
 
-
+ let color = ["rød", "grøn", "blå"];
 function rouletteArray(tal, muligheder_array) {
-  let color = ["rød", "grøn", "blå"];
-  tal % color
+ 
+  return muligheder_array[tal % muligheder_array.length]
 }
 
-rouletteArray(4, color);
-console.log(rouletteArray)
+console.log(rouletteArray(3, color))
