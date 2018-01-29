@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="fetch.css">
+
+</head>
+
+
+<body>
+
+
+    <div id="content"></div>
+    <div id="bigContent"></div>
+    <div id="lastContent"></div>
+
+    <script> 
+        fetch('https://swapi.co/api/people/')
+            .then((response) => {
+
+
+                if (response.status == 200) {
+                    return response.json();
+                } else {
+                    throw new Error("Response status not 200")
+                }
+
+
+            })
+
+            .then((json) => {
+                let content = document.getElementById('content');
+                let bigContent = document.getElementById('bigContent')
+
+                let h1 = document.createElement('h1');
+                h1.textContent = json.results[0].name;
+                content.appendChild(h1);
+
+                let p = document.createElement('p');
+                p.textContent = json.results[0].eye_color;
+                content.appendChild(p);
+
+                let p2 = document.createElement('p');
+                p2.textContent = json.results[0].hair_color;
+                content.appendChild(p2);
+
+                let p3 = document.createElement('p');
+                p3.textContent = json.results[0].height;
+                content.appendChild(p3);
+
+
+
+                // DET STORE ARRAY MED FLERE NAVNE UDSKREVET
+                json.results.forEach(function (lastFunction) {
+                    let p4 = document.createElement('p');
+                    p4.textContent = element.name + " _ " + element.eye_color;
+                    bigContent.appendChild(p4);
+                    return element
+                })
+
+                function lastFunction(element) {
+                    let person = document.createElement('h2');
+                    person.textContent = json.results[0].name;
+                    lastContent.appendChild(person);
+                }
+                lastFunction();
+
+
+                console.log(json)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    </script>
+
+
+</body>
+
+</html>
